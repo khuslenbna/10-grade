@@ -73,6 +73,13 @@ nav a:hover {
   border-radius: 0 0.3em 0.3em 0;
   cursor: pointer;
 }
+.logo-btn {
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  vertical-align: middle;
+}
+
 
 /* Hero Section */
 .hero {

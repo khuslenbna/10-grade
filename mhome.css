@@ -4,25 +4,22 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
   background: #0b1524;
   color: #e6edf3;
 }
-
-/* Navbar */
 .navbar {
   width: 100%;
-  padding: 1.5% 3%;
-  background: #0b1524;
+  padding: 0.5% 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(11, 21, 36, 0.95);
 }
 
 .logo {
-  width: 10%;
-  min-width: 90px;
+  width: 12%;
+  min-width: 100px;
 }
 
 .nav-left {
@@ -33,13 +30,13 @@ body {
 
 nav {
   display: flex;
-  gap: 5%;
+  gap: 4%;
 }
 
 nav a {
-  text-decoration: none;
   color: #c9d1d9;
-  transition: 0.3s;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 nav a:hover {
@@ -48,19 +45,26 @@ nav a:hover {
 
 .nav-right {
   display: flex;
-  gap: 5%;
-  align-items: center;
+  width: 30%;
 }
 
 .nav-right input {
-  background: #1a2232;
-  border: none;
+  flex: 1;
+  background: #1e2329;
   color: #fff;
+  border: none;
   padding: 1%;
-  width: 40%;
-  border-radius: 0.3em;
+  border-radius: 15%;
+  outline: none;
 }
 
+.nav-right button {
+  background: #00bfff;
+  border: none;
+  padding: 1%;
+  border-radius: 0 0.3em 0.3em 0;
+  cursor: pointer;
+}
 button {
   background: #00bfff;
   border: none;
@@ -69,44 +73,44 @@ button {
   border-radius: 0.4em;
   cursor: pointer;
 }
+.logo-btn {
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  vertical-align: middle;
+}
 
 .login {
   background: #1e2a3c;
 }
-
-/* Carousel */
 .carousel {
   width: 90%;
   margin: 3% auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 2%;
 }
-
 .card {
   width: 32%;
+  height:20%;
   background: #111827;
   border-radius: 0.8em;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
 }
-
 .card img {
   width: 100%;
   height: 60%;
   object-fit: cover;
 }
-
 .card-text {
   padding: 4%;
 }
-
 .status {
   color: #00bfff;
   font-size: 90%;
 }
-
 .card-text h3 {
   color: #fff;
   margin-top: 2%;
@@ -116,8 +120,6 @@ button {
   color: #a0aec0;
   font-size: 90%;
 }
-
-/* Share Section */
 .share {
   width: 90%;
   margin: 2% auto;
@@ -126,7 +128,6 @@ button {
   border-radius: 0.5em;
   padding: 2%;
 }
-
 .share .buttons {
   display: flex;
   justify-content: center;
@@ -134,12 +135,10 @@ button {
   flex-wrap: wrap;
   margin-top: 1%;
 }
-
 .share button {
   border-radius: 0.3em;
   padding: 0.8% 2%;
 }
-
 .fb { background: #3b5998; }
 .x { background: #000; }
 .discord { background: #5865F2; }
@@ -147,18 +146,15 @@ button {
 .wa { background: #25D366; }
 .tg { background: #0088cc; }
 
-/* Most Viewed */
 .most-viewed {
   width: 90%;
   margin: 3% auto;
 }
-
 .manga-grid {
   display: flex;
   gap: 2%;
   justify-content: flex-start;
 }
-
 .manga-card {
   width: 13%;
   background: #111827;
@@ -166,15 +162,184 @@ button {
   text-align: center;
   overflow: hidden;
 }
-
 .manga-card img {
   width: 100%;
   height: 80%;
   object-fit: cover;
 }
-
 .manga-card p {
   color: #c9d1d9;
   padding: 3% 2%;
   font-size: 90%;
+}
+.recently-updated {
+  width: 90%;
+  margin: 3% auto;
+}
+
+.recently-updated h2 {
+  color: #fff;
+  font-size: 130%;
+  margin-bottom: 2%;
+}
+
+.update-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.update-item {
+  display: flex;
+  width: 48%;
+  background: #121b2e;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  padding: 2%;
+}
+
+.update-item img {
+  width: 25%;
+  border-radius: 10px;
+}
+
+.update-info {
+  padding-left: 3%;
+  width: 70%;
+}
+
+.update-info .type {
+  color: #57a6ff;
+  font-size: 90%;
+}
+
+.update-info h3 {
+  font-size: 110%;
+  color: #fff;
+  margin: 2% 0;
+}
+
+.update-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update-info li {
+  color: #b0b8c6;
+  margin-bottom: 2%;
+}
+.container {
+      width: 90%;
+      max-width: 1300px;
+      margin: 50px auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    /* ---------- Card Grid ---------- */
+    .card1-grid {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .card1 {
+      background: #162132;
+      border-radius: 10px;
+      width: 200px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card1:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .card1 img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-title {
+      padding: 12px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: #cfd7e4;
+    }
+    .footer {
+  width: 100%;
+  background: linear-gradient(to top, #0b1524, #12233d, #0b1524);
+  text-align: center;
+  padding: 3% 0;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1%;
+  margin-bottom: 2%;
+}
+
+.footer-logo {
+  width: 10%;
+  min-width: 80px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  border-top: 1px solid #1f2b3c;
+  padding-top: 2%;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+
+.footer-small-logo {
+  width: 8%;
+  min-width: 70px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 5%;
+}
+
+.footer-links a {
+  color: #b5b9c6;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-note {
+  margin-top: 2%;
+  font-size: 90%;
+  color: #9ba1b1;
+}
+
+.made-with {
+  color: #9ba1b1;
+  font-size: 85%;
+  margin-top: 1%;
 }
