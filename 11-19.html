@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 10px;
+        }
+        #container {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            background-color: lightgray;
+            box-sizing: border-box;
+        }
+        #popup {
+            display: none;
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+            position: absolute;
+            padding: 20px;
+        }
+        .x {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="popup">
+        <button class="x" onclick="closePopup()">X</button>
+        <p>This is a popup that was forced</p>
+    </div>
+    <button onclick="changeStyle()">Click me</button>
+    <script>
+        function changeStyle() {
+            let doc = document.getElementById('popup');
+            if (doc.style.display === 'block') {
+                doc.style.display = 'none';
+                return;
+            }
+            doc.style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        document.getElementById('container').style.backgroundColor = 'lightblue';
+        document.getElementById('container').style.width = '500px';
+        document.getElementById('container').style.height = '500px';
+        document.getElementById('container').style.border = '5px solid red';
+    </script>
+</body>
+</html>

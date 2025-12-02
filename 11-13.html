@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input id="email" placeholder="Enter email"/>
+    <input type="password" id="password" placeholder="Enter password"/>
+    <p id="text"></p>
+    <button onclick="signin()">Sign in</button>
+    <script>
+        function signin(){
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const textElement = document.getElementById("text");
+            
+            if(email === "" || password === ""){
+                textElement.textContent = "Please fill in all fields";
+                textElement.style.color = "red";
+                return;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailRegex.test(email)){
+                textElement.textContent = "Please enter a valid email";
+                textElement.style.color = "red";
+                return;
+            }
+            if (email === "khuslen@gmail.com" && password === "12345") {
+                textElement.textContent = "Sign in successful!";
+                textElement.style.color = "green";
+            } else {
+                textElement.textContent = "Incorrect email or password";
+                textElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
