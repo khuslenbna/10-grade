@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #cont {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .element {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            font-size: 16px;
+            border-radius: 5px;
+            border-color: black;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont"></div>
+    <input id="textInput" type="text" placeholder="Type here">
+    <button onclick="addElement()">Add Element</button>
+    <button onclick="removeElement()">Remove Element</button>
+
+    <script>
+        function addElement() {
+            const newElement = document.createElement("div");
+            const input = document.getElementById('textInput');
+            newElement.textContent = input.value;
+            newElement.classList.add("element");
+            document.getElementById("cont").appendChild(newElement);
+            newElement.style.flexDirection = "wrap";
+        }
+
+        function removeElement() {
+            const cont = document.getElementById("cont");
+            if (cont.lastElementChild) {
+                cont.removeChild(cont.lastElementChild);
+            }
+        }
+    </script>
+</body>
+</html>
