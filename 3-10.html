@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <input type="number" id="num1" placeholder="Эхний тоо">
+<input type="number" id="num2" placeholder="Хоёр дахь тоо">
+<button onclick="calculate('add')">+</button>
+<button onclick="calculate('subtract')">-</button>
+<div id="calcResult">Үр дүн: ...</div>
+
+<script>
+// JavaScript function
+function calculate(operation){
+  const n1 = parseFloat(document.getElementById("num1").value) || 0;
+  const n2 = parseFloat(document.getElementById("num2").value) || 0;
+  let result = 0;
+
+  if(operation === "add") result = n1 + n2;
+  if(operation === "subtract") result = n1 - n2;
+
+  document.getElementById("calcResult").innerText = "Үр дүн: " + result;
+}
+</script>
+</body>
+</html>
